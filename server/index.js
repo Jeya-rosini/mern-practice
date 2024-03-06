@@ -4,23 +4,19 @@ import appRouter from "./routers/heros.js";
 const app = express();
 const SERVER_PORT = 1234;
 
-app.get("/", (req, res) => {
-  // res.send("Hello World !");
-  res.json([
-    {
-      id: "1",
-      name: "Captain Jack Sparrow",
-      location: "England",
-    },
-    {
-      id: "2",
-      name: "Iron Man",
-      location: "New York",
-    },
-  ]);
-});
-
+app.use(express.json())
 app.use(appRouter)
+
+
+
+app.get('*', (req, res) => {
+  res.json({
+      "success": false,
+      "message":"404 Error found! The page in not available"
+  })
+})
+
+
 
 app.listen(SERVER_PORT, () => {
   console.log(`The server is http://localhost:${SERVER_PORT}`);

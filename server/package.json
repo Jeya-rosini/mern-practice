@@ -5,13 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev":"nodemon --inspect=0.0.0.0:9229 index.js",
+    "dev": "nodemon --inspect=0.0.0.0:9229 index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Jeya-rosini",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^6.4.0"
   }
 }
